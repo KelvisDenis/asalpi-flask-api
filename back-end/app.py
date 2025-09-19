@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, send_from_directory, render_template
+from flask import Flask, request, jsonify, send_from_directory, render_template, Blueprint
 from dotenv import load_dotenv
 from PIL import Image
 import datetime
@@ -22,6 +22,9 @@ db.init_app(app)
 ma.init_app(app)
 bcrypt.init_app(app)
 jwt.init_app(app)
+
+
+keepalive_bp = Blueprint('keepalive', __name__)
 
 # ----------------- Segurança -----------------
 csp = {
@@ -206,6 +209,13 @@ def upload_file():
 def uploaded_file(year, month, filename):
     folder_path = os.path.join(app.config['UPLOAD_FOLDER'], str(year), str(month))
     return send_from_directory(folder_path, filename)
+
+
+
+@keepalive_bp.route("/keepalive", methods=["GET"])
+def keepalive():
+    return jsonify({"status": "ok", "message": "pong"}), 200
+
 
 # ----------------- Rotas HTML -----------------
 @app.route('/')
