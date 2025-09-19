@@ -1,6 +1,5 @@
 from flask import Flask, request, jsonify, send_from_directory, render_template, Blueprint
 from dotenv import load_dotenv
-from PIL import Image
 import datetime
 import cv2
 load_dotenv()
