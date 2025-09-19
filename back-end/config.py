@@ -9,15 +9,15 @@ class Config:
     
 
     # Banco PostgreSQL
-    #SQLALCHEMY_DATABASE_URI = os.getenv(
-        #"DATABASE_URL",
-        #f"mysql+pymysql://{os.getenv('DB_USER')}:{os.getenv('DB_PASS')}@{os.getenv('DB_HOST')}:{os.getenv('DB_PORT', 3306)}/{os.getenv('DB_NAME')}"
-    #)
+    SQLALCHEMY_DATABASE_URI = os.getenv(
+        "DATABASE_URL",
+        f"mysql+pymysql://{os.getenv('DB_USER')}:{os.getenv('DB_PASS')}@{os.getenv('DB_HOST')}:{os.getenv('DB_PORT', 3306)}/{os.getenv('DB_NAME')}"
+    )
 
-    #SQLALCHEMY_TRACK_MODIFICATIONS = False
-
-    SQLALCHEMY_DATABASE_URI = "sqlite:///" + os.path.join(BASE_DIR, "database.db")
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+
+    #SQLALCHEMY_DATABASE_URI = "sqlite:///" + os.path.join(BASE_DIR, "database.db")
+    #SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     JWT_SECRET_KEY = os.getenv("JWT_SECRET_KEY", "super-secret-key")
     JWT_ALGORITHM = "HS256"
