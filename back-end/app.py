@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify, send_from_directory, render_template,
 from dotenv import load_dotenv
 from PIL import Image
 import datetime
+import cv2
 load_dotenv()
 from extensions import db, ma, bcrypt, jwt
 from flask_jwt_extended import create_access_token, jwt_required, get_jwt_identity
@@ -179,22 +180,26 @@ def upload_file():
         return jsonify({"error": "Nome de arquivo vazio"}), 400
 
     if file and allowed_file(file.filename):
-        # Gerar nome único
         filename = f"{uuid.uuid4().hex}_{file.filename}"
-
-        # Criar pasta por ano/mês
         today = datetime.date.today()
         folder_path = os.path.join(app.config["UPLOAD_FOLDER"], str(today.year), str(today.month))
         os.makedirs(folder_path, exist_ok=True)
-
-        # Caminho completo do arquivo
         filepath = os.path.join(folder_path, filename)
 
-        # ---------- Aqui entra o Pillow ----------
-        img = Image.open(file)
-        img.thumbnail((1024, 1024))  # Redimensiona mantendo proporção
-        img.save(filepath, optimize=True, quality=85)  # Salva otimizado
-        # -----------------------------------------
+        # ----------- Redimensionar e otimizar imagem com OpenCV -----------
+        file_bytes = np.frombuffer(file.read(), np.uint8)
+        img = cv2.imdecode(file_bytes, cv2.IMREAD_COLOR)
+
+        # Redimensiona mantendo proporção
+        max_dim = 1024
+        h, w = img.shape[:2]
+        if max(h, w) > max_dim:
+            scale = max_dim / max(h, w)
+            img = cv2.resize(img, (int(w*scale), int(h*scale)))
+
+        # Salvar como JPEG otimizado
+        cv2.imwrite(filepath, img, [int(cv2.IMWRITE_JPEG_QUALITY), 85])
+        # -------------------------------------------------------------------
 
         host = app.config.get("LOCAL_IP", "127.0.0.1")
         port = app.config.get("PORT", 5000)
@@ -203,7 +208,6 @@ def upload_file():
         return jsonify({"url": file_url}), 201
 
     return jsonify({"error": "Extensão de arquivo não permitida"}), 400
-
 
 @app.route('/uploads/<int:year>/<int:month>/<filename>')
 def uploaded_file(year, month, filename):
