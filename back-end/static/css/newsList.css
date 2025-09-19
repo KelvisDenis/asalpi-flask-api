@@ -1,0 +1,394 @@
+/* ==================== Reset e Base ==================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100vh;
+  font-family: 'Open Sans', sans-serif;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+
+/* ==================== Navbar ==================== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #004080;
+    color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .logo img {
+    height: 120px;
+    margin-right: 10px;
+}
+
+.navbar .logo span {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-buttons a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-buttons a:hover,
+.nav-buttons a.active {
+    color: #ffcc00;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.logo a img {
+    width: 150px;
+    height: auto;
+}
+
+.logo-text-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none;
+}
+
+.logo-text-center:hover,
+.logo a:hover {
+    color: #ffcc00;
+    cursor: pointer;
+}
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown>a {
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    flex-direction: column;
+}
+
+.dropdown-content a {
+    color: #004080;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: flex;
+}
+
+/* ==================== Sidebar Mobile ==================== */
+.sidebar {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    background-color: #004080;
+    padding: 2rem;
+    z-index: 2000;
+}
+
+.sidebar .logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.sidebar .logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.sidebar .logo span {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    margin: 1rem 0;
+    font-weight: 600;
+    display: block;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+    color: #ffcc00;
+}
+
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    z-index: 1001;
+}
+
+/* ==================== Notícias ==================== */
+.news-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 180px auto 40px;
+    padding: 0 15px;
+}
+
+.news-container {
+    flex: 3;
+    min-width: 0;
+}
+
+.news-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    border-bottom: 3px solid #c4170c;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.news-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.news-item img {
+    width: 250px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+
+.news-info {
+    flex: 1;
+    min-width: 0;
+    /* Propriedade essencial para quebrar o texto */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.news-info h2 {
+    font-size: 20px;
+    margin-bottom: 8px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.news-info h2 a {
+    text-decoration: none;
+    color: #0b25a3;
+    transition: color 0.2s;
+}
+
+.news-info h2 a:hover {
+    color: #a1120a;
+}
+
+.news-info p {
+    font-size: 15px;
+    color: #444;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Paginação */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+}
+
+.pagination a {
+    padding: 8px 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #333;
+    font-size: 15px;
+    transition: all 0.2s;
+}
+
+.pagination a:hover {
+    background: #f1f1f1;
+    border-color: #bbb;
+}
+
+.pagination a.active {
+    background: #c4170c;
+    color: #fff;
+    border-color: #c4170c;
+    font-weight: bold;
+}
+
+.pagination a.prev,
+.pagination a.next {
+    font-weight: 600;
+}
+
+/* ==================== Footer ==================== */
+.footer-complexo {
+    background: #000;
+    color: white;
+    padding: 2rem;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.footer-col h3 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-col ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-col ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-social {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.footer-social a {
+    color: white;
+    margin: 0 10px;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.footer-social a:hover {
+    color: #ffcc00;
+}
+
+/* ==================== Responsividade (Mobile First) ==================== */
+
+@media (max-width: 900px) {
+    .news-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .news-item img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 15px;
+    }
+
+    .news-info {
+        width: 100%;
+    }
+
+    /* Layout do news-wrapper e sidebar */
+    .news-wrapper {
+        margin-top: 150px;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-buttons {
+        display: none;
+    }
+
+    .sidebar.active {
+        display: flex;
+    }
+
+    .logo-text-center {
+        font-size: 1.2rem;
+    }
+
+    .navbar .logo img {
+        height: 80px;
+    }
+
+     .logo a img {
+        width: 80px;
+        height: auto;
+    }
+}

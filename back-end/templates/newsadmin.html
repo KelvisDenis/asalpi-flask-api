@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal de Notícias</title>
+  <link rel="stylesheet" href="../static/css/newsloginstyle.css">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav id="navbar" class="hidden">
+    <button onclick="showTab('create-section')">Criar Notícia</button>
+    <button onclick="showTab('list-section')">Listar Notícias</button>
+    <button id="logout-btn" class="hidden">Sair</button>
+  </nav>
+
+  <!-- Login -->
+  <section id="login-section">
+    <div class="login-box">
+      <h2>Login</h2>
+      <input type="text" id="user" placeholder="Usuario">
+      <input type="password" id="password" placeholder="Senha">
+      <button id="login-btn">Entrar</button>
+    </div>
+  </section>
+
+  <!-- Dashboard -->
+  <section id="dashboard-section" class="hidden">
+    <div class="dashboard">
+      <!-- Criar notícia -->
+      <div id="create-section" class="tab-content">
+        <h2>Criar Notícia</h2>
+        <input type="text" id="title" placeholder="Título">
+        <textarea id="content" placeholder="Conteúdo"></textarea>
+        <input type="file" id="image_file" accept="image/*">
+        <button id="create-news-btn" class="btn-primary">Publicar</button>
+      </div>
+
+      <!-- Listagem -->
+      <div id="list-section" class="tab-content hidden">
+        <h2>Lista de Notícias</h2>
+        <table class="news-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Título</th>
+              <th>Conteúdo</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="news-list"></tbody>
+        </table>
+        <div id="pagination"></div>
+      </div>
+    </div>
+  </section>
+  <!-- Aba Atualizar Notícia -->
+  <div id="update-section" class="tab-content hidden">
+    <h2>Atualizar Notícia</h2>
+    <input type="hidden" id="update-id">
+    <input type="text" id="update-title" placeholder="Título" required>
+    <textarea id="update-content" placeholder="Conteúdo" required></textarea>
+    <input type="file" id="update-image_file" accept="image/*" required>
+    <button id="update-news-btn" class="btn-primary">Atualizar</button>
+    <button id="back-news-btn" class="back-btn">Cancelar</button>
+  </div>
+
+
+  <script src="../static/js/newslogin.js"></script>
+</body>
+
+</html>

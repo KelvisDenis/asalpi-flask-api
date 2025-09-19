@@ -1,0 +1,48 @@
+# Python
+front-end/*
+back-end/__pycache__/
+back-end/register/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+back-end/uploads
+*__pycache__
+# Virtualenv
+venv/
+env/
+ENV/
+.venv/
+*.egg-info/
+dist/
+build/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Flask
+instance/
+*.db
+*.sqlite3
+*.log
+
+# Arquivos de configuração locais
+.env
+.env.*
+
+# Node/npm (se usar frontend)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Outros
+*.bak
+*.tmp
+

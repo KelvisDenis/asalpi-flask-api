@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ASALPI - Sindicato</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600;700&display=swap"
+    rel="stylesheet" />
+  <!-- Font Awesome 6 completo -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../static/css/index.css" />
+</head>
+
+<body>
+  <!-- Navbar desktop -->
+  <header class="navbar" role="banner">
+    <div class="logo">
+      <a href="{{ url_for('index') }}" aria-label="Página inicial ASALPI">
+        <img src="../static/assets/logo-png.png" alt="Logo da ASALPI" />
+      </a>
+    </div>
+    <a href="{{ url_for('index') }}" class="logo-text-center" aria-current="page">ASALPI</a>
+
+    <button id="hamburger-btn" class="hamburger" aria-label="Abrir menu de navegação" aria-controls="sidebar"
+      aria-expanded="false">
+      ☰
+    </button>
+
+    <nav class="nav-buttons" aria-label="Menu principal">
+      <a href="#inicio" class="active" aria-current="page">INÍCIO</a>
+      <a href="#diretoria">DIRETORIA</a>
+      <a href="{{ url_for('news') }}">NOTÍCIA</a>
+      <a href="#orgaos">ORGÃOS</a>
+      <div class="dropdown">
+        <a aria-haspopup="true" aria-expanded="false" aria-controls="convenio-list">CONVÊNIO</a>
+        <div class="dropdown-content" id="convenio-list" role="menu">
+          <a href="https://www.unimed.coop.br/site/pt/web/teresina/" target="_blank" rel="noopener"
+            role="menuitem">UNIMED</a>
+          <a href="https://www.claro.com.br/" target="_blank" rel="noopener" role="menuitem">CLARO</a>
+          <a href="https://www.sescpiaui.com.br/" target="_blank" rel="noopener" role="menuitem">SESC</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Sidebar mobile -->
+  <aside class="sidebar" id="sidebar" aria-label="Menu lateral" tabindex="-1">
+    <div class="logo">
+      <span>ASALPI</span>
+    </div>
+    <nav aria-label="Menu lateral">
+      <a href="#inicio" class="active" aria-current="page">INÍCIO</a>
+      <a href="{{ url_for('news') }}">NOTÍCIA</a>
+      <a href="#diretoria">DIRETORIA</a>
+      <a href="#orgaos">ORGÃOS</a>
+      <a href="https://www.unimed.coop.br/site/pt/web/teresina/" target="_blank" rel="noopener">UNIMED</a>
+      <a href="https://www.claro.com.br/" target="_blank" rel="noopener">CLARO</a>
+      <a href="https://www.sescpiaui.com.br/" target="_blank" rel="noopener">SESC</a>
+    </nav>
+  </aside>
+
+  <!-- Main content -->
+  <main class="content" id="main-content" tabindex="-1">
+    <section id="inicio" class="no-padding" aria-labelledby="inicio-title">
+      <div class="slider-container" role="region" aria-label="Destaques">
+        <div class="slider" aria-live="polite">
+          <img src="../static/assets/clube/clube1.jpg" alt="Vista do clube da ASSALPI" />
+          <img src="../static/assets/colonia-feria/colonia2.jpg" alt="Colônia de férias da ASSALPI" />
+          <img src="../static/assets/imagem2.jpg" alt="Evento social da ASSALPI" />
+          <img src="../static/assets/imagem4.jpg" alt="Atividades esportivas da ASSALPI" />
+        </div>
+        <div class="slider-overlay">
+          <div class="slider-text">
+            <h2 id="inicio-title">Bem-vindo à ASALPI</h2>
+            <p>Esta é a página inicial. Aqui você encontra novidades, avisos e informações gerais da associação.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="diretoria" class="diretoria-section" aria-labelledby="diretoria-title">
+      <h2 id="diretoria-title">DIRETORIA</h2>
+      <p class="clube-descricao">Aqui você conhece nossa diretoria ASALPI.</p>
+
+      <div class="diretoria-container" role="list">
+        <div class="diretoria-card" role="listitem">
+          <img src="../static/assets/presidente.jpg" alt="Foto do presidente Francisco José de Almeida Cruz" />
+          <h3>Francisco José de Almeida Cruz</h3>
+          <p>Presidente</p>
+        </div>
+        <div class="diretoria-card" role="listitem">
+          <img src="../static/assets/vice dr fabio.jpg" alt="Foto do 1º vice-presidente Dr. Fábio" />
+          <h3>Dr. Fábio (Procuradoria)</h3>
+          <p>1º vice-presidente</p>
+        </div>
+        <div class="diretoria-card" role="listitem">
+          <img src="../static/assets/lourival.jpg" alt="Foto do 2º vice-presidente Lourival" />
+          <h3>Lourival</h3>
+          <p>2º vice-presidente</p>
+        </div>
+      </div>
+
+
+      <section class="diretoria-banner-collapsible">
+        <button class="collapsible" aria-controls="diretoria-banner" aria-expanded="false">Diretoria do Sindicato
+          10/12/2024 a 10/12/2027</button>
+        <div class="content" id="diretoria-banner">
+          <img src="../static/assets/tabela.jpeg" alt="Tabela com membros da diretoria do Sindicato"
+            onclick="abrirModal()" tabindex="0">
+        </div>
+      </section>
+
+      <!-- Modal escondido -->
+      <div id="modal" class="modal" role="dialog" aria-modal="true" aria-label="Imagem ampliada da diretoria" hidden>
+        <img class="modal-conteudo" id="imgAmpliada" alt="Imagem ampliada da diretoria">
+      </div>
+    </section>
+
+    <section id="orgaos" class="clube-section" aria-labelledby="orgaos-title">
+      <h2 id="orgaos-title">Orgãos</h2>
+      <p class="clube-descricao">Aqui você encontra nossos orgãos e atividades ASALPI.</p>
+
+      <div class="clube-grid">
+        <a href="{{ url_for('clube') }}" class="clube-card" aria-label="Saiba mais sobre o clube">
+          <img src="../static/assets/imagem1.jpg" alt="Evento esportivo no clube da ASSALPI">
+          <div class="clube-info">
+            <h3>CLUBE</h3>
+            <p>Um espaço pensado para toda a família relaxar, se divertir e criar boas lembranças.
+              Nosso clube conta com piscinas para todas as idades, área de lazer, ambiente seguro e acolhedor,
+              perfeito para momentos de descanso ou brincadeiras em família.</p>
+          </div>
+        </a>
+
+        <a href="{{ url_for('escola') }}" class="clube-card" aria-label="Saiba mais sobre a escola">
+          <img src="../static/assets/imagem5.jpeg" alt="Festa temática na escola da ASSALPI">
+          <div class="clube-info">
+            <h3>ESCOLA</h3>
+            <p>Conheça nossa Escola Cidadão Cidadã</p>
+            <p>Ficou em 8º lugar no ranking das 50 melhores escolas do Piauí.</p>
+            <p>RUA OSVALDO CRUZ, 3065 CABRAL. 64000-540 Teresina - PI</p>
+            <p>WhatsApp - (86) 3223-6454</p>
+          </div>
+        </a>
+
+        <a href="{{ url_for('colonia') }}" class="clube-card" aria-label="Saiba mais sobre a colônia de férias">
+          <img src="../static/assets/imagem4.jpg" alt="Área de lazer da colônia de férias da ASSALPI">
+          <div class="clube-info">
+            <h3>COLÔNIA DE FÉRIAS</h3>
+            <p>O lugar ideal para reunir a família e os amigos, aproveitar bons momentos e curtir a brisa do mar em um
+              ambiente acolhedor e descontraído.</p>
+            <p>Endereço: Rua Parnaíba, 507 – Luís Correia – PI, 64220-000</p>
+            <p>WhatsApp: (86) 99437-1454</p>
+          </div>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer-complexo" role="contentinfo">
+    <div class="footer-container">
+      <section class="footer-col" aria-labelledby="sobre-nos-title">
+        <h3 id="sobre-nos-title">SOBRE NÓS</h3>
+        <p>
+          A ASALPI é uma associação sem fins lucrativos que visa promover atividades sociais, culturais e
+          esportivas
+          para seus associados. Nosso objetivo é fortalecer a comunidade através de iniciativas inclusivas e
+          colaborativas.
+        </p>
+      </section>
+
+      <section class="footer-col convenio" aria-labelledby="convenio-title">
+        <h3 id="convenio-title">CONVÊNIO</h3>
+        <ul>
+          <li><a href="https://www.unimed.coop.br/site/pt/web/teresina/">UNIMED</a></li>
+          <li><a href="https://www.claro.com.br/">CLARO</a></li>
+          <li><a href="https://www.sescpiaui.com.br/">SESC</a></li>
+        </ul>
+      </section>
+
+      <section class="footer-col" aria-labelledby="documentos-title">
+        <h3 id="documentos-title">Documentos</h3>
+        <ul>
+          <li><a href="../static/assets/Estatuto Social.pdf" download="Estatuto Social.pdf">ESTATUTO SOCIAL</a></li>
+          <li><a href="../static/assets/REGIMENTO INTERNO.pdf" download="Regimento Interno.pdf">REGIMENTO
+              INTERNO</a></li>
+        </ul>
+      </section>
+
+      <section class="footer-col atendimento" aria-labelledby="atendimento-title">
+        <h3 id="atendimento-title">Atendimento</h3>
+        <p><strong>Assembleia Legislativa do Estado do Piauí - Palácio Petrônio Portela</strong></p>
+        <p><strong>Endereço:</strong><br>
+          Av. Mal. Castelo Branco, 201 - Cabral<br>
+          Teresina/PI - CEP 64001-923</p>
+        <p><strong>Telefone:</strong><br>3133-3022</p>
+        <p><strong>Email:</strong><br>
+          <a href="mailto:ouvidoria@al.pi.leg.br">ouvidoria@al.pi.leg.br</a>
+        </p>
+      </section>
+    </div>
+
+    <div class="footer-social" aria-label="Redes sociais">
+      <a href="https://facebook.com/assalpi" target="_blank" aria-label="Facebook ASSALPI">
+        <i class="fa-brands fa-facebook"></i>
+      </a>
+      <a href="https://instagram.com/assalpi" target="_blank" aria-label="Instagram ASSALPI">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+      <a href="mailto:contato@assalpi.com.br" aria-label="Enviar email para ASSALPI">
+        <i class="fa-solid fa-envelope"></i>
+      </a>
+    </div>
+
+  </footer>
+
+  <script src="../static/js/scripts.js"></script>
+</body>
+
+</html>

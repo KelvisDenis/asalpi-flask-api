@@ -1,0 +1,12 @@
+Flask
+Flask-SQLAlchemy
+Flask-Marshmallow
+marshmallow-sqlalchemy
+Flask-Bcrypt
+Flask-JWT-Extended
+python-dotenv
+Flask-Cors
+gunicorn
+flask-wtf
+pymysql
+Pillow==10.1.0

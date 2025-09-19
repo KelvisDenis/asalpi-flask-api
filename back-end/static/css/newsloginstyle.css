@@ -1,0 +1,387 @@
+/* ==================== Reset e Base ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f4f6f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* ==================== Navbar ==================== */
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-start;
+    background: #007bff;
+    padding: 12px;
+}
+
+nav button {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    background: #fff;
+    color: #007bff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+nav button:hover {
+    background: #e8f0fe;
+}
+
+.back-btn {
+    margin-left: auto;
+    background: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+#logout-btn {
+    margin-left: auto;
+    background: #dc3545;
+    color: #fff;
+}
+
+#logout-btn:hover {
+    background: #b02a37;
+}
+
+/* ==================== Login ==================== */
+#login-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+.login-box {
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-box h2 {
+    margin-bottom: 20px;
+    color: #007bff;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+#login-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: #007bff;
+    color: white;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#login-btn:hover {
+    background: #0056b3;
+}
+
+/* ==================== Dashboard ==================== */
+.dashboard {
+    margin: 20px;
+    padding-bottom: 20px;
+}
+
+.tab-content {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    margin-top: 20px;
+}
+
+/* ==================== Formulários ==================== */
+input,
+textarea {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.btn-primary {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background: #0056b3;
+}
+
+/* ==================== Paginação ==================== */
+#pagination {
+    text-align: center;
+    margin-top: 15px;
+}
+
+#pagination button {
+    margin: 0 4px;
+    padding: 6px 12px;
+    border: none;
+    background: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#pagination button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+/* ==================== Tabela - Padrão Desktop ==================== */
+.table-container {
+    width: 100%;
+    margin-top: 20px;
+    overflow-x: auto;
+}
+
+.news-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.news-table th,
+.news-table td {
+    border: 1px solid #ddd;
+    padding: 12px 15px;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Botões da tabela */
+.news-table button {
+    padding: 6px 12px;
+    margin: 0 4px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.news-table button:first-child {
+    background: #ffc107;
+    color: #fff;
+}
+
+.news-table button:last-child {
+    background: #dc3545;
+    color: #fff;
+}
+
+/* ==================== Responsividade (Mobile-First) ==================== */
+
+/* Tabela em formato de card para telas pequenas */
+@media (max-width: 768px) {
+
+    /* Esconde o cabeçalho da tabela em mobile */
+    .news-table thead {
+        display: none;
+    }
+
+    .news-table,
+    .news-table tbody,
+    .news-table tr,
+    .news-table td {
+        display: block;
+        width: 100%;
+    }
+
+    /* Estiliza cada linha como um card */
+    .news-table tr {
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+
+    /* Adiciona os rótulos a cada célula */
+    .news-table td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+        white-space: normal;
+        word-wrap: break-word;
+
+
+    }
+
+    .news-table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 15px;
+        width: calc(50% - 30px);
+        text-align: left;
+        font-weight: bold;
+        color: #007bff;
+
+    }
+
+    /* Estilos para a coluna de Ações */
+    .news-table td:nth-last-child(1) {
+        text-align: center;
+        padding-left: 15px;
+
+    }
+
+    .news-table td:nth-last-child(1) button {
+        width: 100%;
+        margin: 5px 0;
+
+    }
+
+    /* Ajustes gerais para mobile */
+    .login-box {
+        max-width: 100%;
+        padding: 20px;
+
+    }
+
+    .dashboard {
+        margin: 10px;
+    }
+
+    .news-table td[data-label="Ações"] {
+        display: flex;
+        flex-direction: column;
+        /* organiza em coluna */
+        align-items: center;
+        text-align: center;
+        padding-left: 15px;
+        /* remove o deslocamento de 50% */
+    }
+
+    /* rótulo "Ações" vai em cima */
+    .news-table td[data-label="Ações"]::before {
+        position: relative;
+        /* não mais absoluto */
+        left: 0;
+        width: 100%;
+        margin-bottom: 8px;
+        text-align: center;
+        font-weight: bold;
+        color: #007bff;
+        display: block;
+        /* ocupa a linha toda */
+    }
+
+    /* botões empilhados */
+    .news-table td[data-label="Ações"] button {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+
+/* Layout para tablets e desktops */
+@media (min-width: 768px) {
+    .login-box {
+        max-width: 500px;
+        padding: 35px;
+    }
+
+    nav {
+        justify-content: space-between;
+    }
+
+    .dashboard {
+        margin: 30px;
+    }
+
+    .tab-content {
+        padding: 25px;
+    }
+
+    .news-table th,
+    .news-table td {
+        min-width: 150px;
+        padding: 14px 18px;
+    }
+
+}
+
+/* Layout para telas grandes (desktops) */
+@media (min-width: 1024px) {
+    .login-box {
+        max-width: 600px;
+        padding: 40px;
+    }
+
+    .dashboard {
+        margin: 40px;
+    }
+
+    .tab-content {
+        padding: 30px;
+    }
+
+    nav button {
+        padding: 10px 18px;
+    }
+
+    #pagination button {
+        padding: 8px 14px;
+    }
+
+    .news-table th,
+    .news-table td {
+        min-width: 180px;
+        padding: 16px 20px;
+    }
+}

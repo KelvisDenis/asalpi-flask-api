@@ -1,0 +1,701 @@
+/* ==================== Reset e Base ==================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100vh;
+  font-family: 'Open Sans', sans-serif;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+/* ==================== Navbar ==================== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #004080;
+  color: white;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar .logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .logo img {
+  height: 120px;
+  margin-right: 10px;
+}
+
+.navbar .logo span {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-buttons a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.nav-buttons a:hover,
+.nav-buttons a.active {
+  color: #ffcc00;
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.logo a img {
+  width: 150px;
+  height: auto;
+}
+
+.logo-text-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: white;
+  text-decoration: none;
+}
+
+.logo-text-center:hover,
+.logo a:hover {
+  color: #ffcc00;
+  cursor: pointer;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown>a {
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  flex-direction: column;
+}
+
+.dropdown-content a {
+  color: #004080;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: flex;
+}
+
+/* ==================== Sidebar Mobile ==================== */
+.sidebar {
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 250px;
+  background-color: #004080;
+  padding: 2rem;
+  z-index: 2000;
+}
+
+.sidebar .logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.sidebar .logo img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.sidebar .logo span {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  margin: 1rem 0;
+  font-weight: 600;
+  display: block;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+  color: #ffcc00;
+}
+
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  z-index: 1001;
+}
+
+/* ==================== Slider ==================== */
+.slider-container {
+  position: relative;
+  overflow: hidden;
+  margin-top: 60px;
+  width: 100%;
+  height: 100vh;
+}
+
+.slider {
+  display: flex;
+  height: 100%;
+  transition: transform 1s ease-in-out;
+}
+
+.slider img {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* Overlay */
+.slider-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.slider-text h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.slider-text p {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+/* ==================== Conteúdo Principal ==================== */
+.conteudo-padrao {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.conteudo-padrao h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #004080;
+}
+
+.conteudo-padrao p {
+  font-size: 1.1rem;
+}
+
+/* ==================== Notícias ==================== */
+.noticia-card {
+  display: flex;
+  background: #fff;
+  margin: 1rem auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-width: 800px;
+}
+
+.noticia-img {
+  width: 200px;
+  object-fit: cover;
+}
+
+.noticia-conteudo {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.noticia-titulo {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #004080;
+}
+
+.noticia-descricao {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.noticia-link {
+  color: #004080;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.noticia-link:hover {
+  text-decoration: underline;
+}
+
+/* ==================== Clube ==================== */
+.clube-section {
+  padding: 4rem 2rem;
+  background-color: #f0f4f8;
+  text-align: center;
+}
+
+.clube-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #004080;
+}
+
+.clube-descricao {
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
+  font-size: 1.1rem;
+}
+
+.clube-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.clube-card {
+  display: block;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.clube-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.clube-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.clube-info {
+  padding: 1rem;
+  text-align: left;
+}
+
+.clube-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #004080;
+}
+
+/* ==================== Diretoria ==================== */
+.diretoria-container {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.diretoria-card {
+  text-align: center;
+  width: 200px;
+}
+
+.diretoria-card img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 4px solid #FFD700;
+  object-fit: cover;
+}
+
+.diretoria-card h3 {
+  margin: 10px 0 5px;
+  font-size: 18px;
+}
+
+.diretoria-card p {
+  font-size: 14px;
+  color: #555;
+}
+
+.diretoria-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.diretoria-banner-collapsible {
+  width: 100%;
+  max-width: 900px;
+  margin: 30px auto;
+}
+
+.collapsible {
+  background-color: #004080;
+  color: white;
+  cursor: pointer;
+  padding: 15px 20px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.collapsible:hover {
+  background-color: #0059b3;
+  transform: scale(1.02);
+}
+
+.collapsible.active {
+  background-color: #003366;
+}
+
+.diretoria-banner-collapsible .content {
+  padding: 0;
+  display: none;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.diretoria-banner-collapsible .content img {
+  width: 100%;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  display: block;
+  transition: transform 0.2s;
+}
+
+.diretoria-banner-collapsible .content img:hover {
+  transform: scale(1.02);
+}
+
+/* ==================== Footer (corrigido) ==================== */
+.footer-complexo {
+  background-color: #0a0a0a;
+  color: #fff;
+  padding: 40px 20px;
+  font-family: 'Open Sans', sans-serif;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden; /* evita barras horizontais indesejadas */
+}
+
+/* container com padding interior e controle de largura */
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: flex-start;
+  box-sizing: border-box;
+  padding: 0 12px; /* garante espaço nas laterais em mobile */
+}
+
+/* cada coluna pode encolher (min-width:0 evita estouro) */
+.footer-col {
+  flex: 1 1 220px; /* grow 1 | shrink 1 | base 220px */
+  min-width: 0;    /* permite encolher abaixo do base sem causar overflow */
+  box-sizing: border-box;
+}
+
+/* tipografia */
+.footer-col h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.footer-col p,
+.footer-col ul li,
+.footer-col ul li a {
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0 0 8px 0;
+}
+
+/* lista */
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li a {
+  text-decoration: none;
+  color: #dddddd;
+  transition: color 0.3s;
+  display: inline-block;
+  word-break: break-word;      /* quebra palavras longas */
+  overflow-wrap: anywhere;     /* suporte adicional para strings longas */
+}
+
+/* redes sociais */
+.footer-social {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 22px;
+  width: 100%;
+}
+
+.footer-social a {
+  color: #fff;
+  margin: 0 10px;
+  display: inline-block;
+  transition: color 0.3s;
+}
+
+/* garante que imagens/iframes não estourem */
+.footer-col img,
+.footer-col iframe,
+.footer-col video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ==================== Responsividade ==================== */
+
+/* Tablet: até 1024px -> 2 colunas */
+@media (max-width: 1024px) {
+  .footer-container {
+    justify-content: center;
+    padding: 0 18px;
+  }
+
+  .footer-col {
+    flex: 1 1 45%;
+    text-align: center;
+  }
+
+  .footer-social {
+    margin-top: 24px;
+  }
+}
+
+/* Mobile: até 768px -> 1 coluna */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 14px;
+  }
+
+  .footer-col {
+    flex: 1 1 100%;
+    width: 100%;
+    text-align: center;
+    padding: 8px 0;
+    margin-bottom: 12px;
+  }
+
+  .footer-social {
+    margin-top: 12px;
+  }
+}
+
+/* ==================== Responsividade ==================== */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .slider-container {
+    height: 70vh;
+  }
+
+  .slider img {
+    height: 70vh;
+  }
+
+  .slider-text h2 {
+    font-size: 2rem;
+  }
+
+  .slider-text p {
+    font-size: 1rem;
+  }
+
+  .diretoria-banner-collapsible {
+    max-width: 700px;
+  }
+
+  .collapsible {
+    font-size: 1.1rem;
+    padding: 12px 18px;
+  }
+
+  .nav-buttons {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .sidebar.active {
+    display: flex;
+  }
+  
+
+}
+
+@media (min-width: 1025px) {
+  .hamburger {
+    display: none;
+  }
+
+  .nav-buttons {
+    display: flex;
+  
+  }
+
+}
+
+
+
+@media (max-width: 900px) {
+
+    /* Layout da notícia: imagem acima do texto */
+    .news-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .news-item img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 15px;
+    }
+
+    .news-info {
+        width: 100%;
+    }
+
+    /* Layout do news-wrapper e sidebar */
+    .news-wrapper {
+        margin-top: 150px;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-buttons {
+        display: none;
+    }
+
+    .sidebar.active {
+        display: flex;
+    }
+
+    .logo-text-center {
+        font-size: 1.2rem;
+    }
+
+    .navbar .logo img {
+        height: 80px;
+    }
+
+    .logo a img {
+        width: 100px;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+  .slider-container {
+    height: 50vh;
+  }
+
+  .slider img {
+    height: 50vh;
+  }
+
+  .slider-text h2 {
+    font-size: 1.2rem;
+  }
+
+  .slider-text p {
+    font-size: 0.8rem;
+  }
+
+  .collapsible {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+
+  .diretoria-banner-collapsible .content img {
+    height: auto;
+  }
+
+  .logo a img {
+    width: 80px;
+    height: auto;
+  }
+}

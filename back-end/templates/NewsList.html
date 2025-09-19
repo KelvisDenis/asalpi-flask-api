@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notícias</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="../static/css/NewsList.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar desktop -->
+    <header class="navbar">
+        <div class="logo">
+            <a href="{{ url_for('index') }}">
+                <img src="../static/assets/logo-png.png" alt="Logo ASALPI" />
+            </a>
+        </div>
+        <a href="{{ url_for('index') }}" class="logo-text-center">ASALPI</a>
+
+        <button id="hamburger-btn" class="hamburger" aria-label="Abrir menu">
+            ☰
+        </button>
+
+        <nav class="nav-buttons">
+            <a href="{{ url_for('index') }}">INÍCIO</a>
+            <a href="{{ url_for('news') }}" class="active">NOTÍCIAS</a>
+            <a href="{{ url_for('index') }}#diretoria">DIRETORIA</a>
+            <a href="{{ url_for('index') }}#orgaos">ORGÃOS</a>
+
+
+            <!-- Dropdown de Convênios -->
+            <div class="dropdown">
+                <a>CONVÊNIO</a>
+                <div class="dropdown-content">
+                    <a href="https://www.unimed.coop.br/site/pt/web/teresina/" target="_blank" rel="noopener">UNIMED</a>
+                    <a href="https://www.claro.com.br/" target="_blank" rel="noopener">CLARO</a>
+                    <a href="https://www.sescpiaui.com.br/" target="_blank" rel="noopener">SESC</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Sidebar mobile com dropdown -->
+    <aside class="sidebar">
+        <div class="logo">
+            <span>ASALPI</span>
+        </div>
+        <a href="{{ url_for('index') }}">INÍCIO</a>
+        <a href="{{ url_for('index') }}#diretoria">DIRETORIA</a>
+        <a href="{{ url_for('news') }}" class="active">NOTÍCIAS</a>
+        <a href="{{ url_for('index') }}#orgaos">ORGÃOS</a>
+        <a href="https://www.unimed.coop.br/site/pt/web/teresina/" target="_blank" rel="noopener">UNIMED</a>
+        <a href="https://www.claro.com.br/" target="_blank" rel="noopener">CLARO</a>
+        <a href="https://www.sescpiaui.com.br/" target="_blank" rel="noopener">SESC</a>
+    </aside>
+
+    <!-- Conteúdo principal + sidebar de notícias -->
+    <main class="news-wrapper">
+
+        <!-- Área principal de notícias -->
+        <section class="news-container">
+            <h1 class="news-title">Últimas Notícias</h1>
+
+
+
+            <!-- Paginação -->
+            <div class="pagination">
+                <a href="#" class="prev">« Anterior</a>
+                <a href="#" class="active">1</a>
+                <a href="#" class="next">Próximo »</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-complexo" role="contentinfo">
+        <div class="footer-container">
+            <section class="footer-col" aria-labelledby="sobre-nos-title">
+                <h3 id="sobre-nos-title">SOBRE NÓS</h3>
+                <p>
+                    A ASALPI é uma associação sem fins lucrativos que visa promover atividades sociais, culturais e
+                    esportivas
+                    para seus associados. Nosso objetivo é fortalecer a comunidade através de iniciativas inclusivas e
+                    colaborativas.
+                </p>
+            </section>
+
+            <section class="footer-col convenio" aria-labelledby="convenio-title">
+                <h3 id="convenio-title">CONVÊNIO</h3>
+                <ul>
+                    <li><a href="https://www.unimed.coop.br/site/pt/web/teresina/">UNIMED</a></li>
+                    <li><a href="https://www.claro.com.br/">CLARO</a></li>
+                    <li><a href="https://www.sescpiaui.com.br/">SESC</a></li>
+                </ul>
+            </section>
+
+            <section class="footer-col" aria-labelledby="documentos-title">
+                <h3 id="documentos-title">Documentos</h3>
+                <ul>
+                    <li><a href="../static/assets/Estatuto Social.pdf" download="Estatuto Social.pdf">ESTATUTO
+                            SOCIAL</a></li>
+                    <li><a href="../static/assets/REGIMENTO INTERNO.pdf" download="Regimento Interno.pdf">REGIMENTO
+                            INTERNO</a></li>
+                </ul>
+            </section>
+
+            <section class="footer-col atendimento" aria-labelledby="atendimento-title">
+                <h3 id="atendimento-title">Atendimento</h3>
+                <p><strong>Assembleia Legislativa do Estado do Piauí - Palácio Petrônio Portela</strong></p>
+                <p><strong>Endereço:</strong><br>
+                    Av. Mal. Castelo Branco, 201 - Cabral<br>
+                    Teresina/PI - CEP 64001-923</p>
+                <p><strong>Telefone:</strong><br>3133-3022</p>
+                <p><strong>Email:</strong><br>
+                    <a href="mailto:ouvidoria@al.pi.leg.br">ouvidoria@al.pi.leg.br</a>
+                </p>
+            </section>
+        </div>
+
+        <div class="footer-social" aria-label="Redes sociais">
+            <a href="https://facebook.com/assalpi" target="_blank" aria-label="Facebook ASSALPI"><i
+                    class="fa fa-facebook"></i></a>
+            <a href="https://instagram.com/assalpi" target="_blank" aria-label="Instagram ASSALPI"><i
+                    class="fa fa-instagram"></i></a>
+            <a href="mailto:contato@assalpi.com.br" aria-label="Enviar email para ASSALPI"><i
+                    class="fa fa-envelope"></i></a>
+        </div>
+    </footer>
+
+    <script src="../static/js/news.js"></script>
+</body>
+
+</html>

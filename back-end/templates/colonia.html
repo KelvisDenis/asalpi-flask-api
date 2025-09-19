@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galeria de Imagens do nossa colonia de ferias</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../static/css/colonia.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+
+<div id="imagemModal" class="modal">
+  <span class="fechar">&times;</span>
+  <img class="modal-conteudo" id="imgExpandida">
+</div>
+
+<body>
+
+  <header class="navbar">
+    <div class="logo">
+      <a href="{{ url_for('index') }}">
+        <img src="../static/assets/logo-png.png" alt="Logo ASALPI" />
+      </a>
+    </div>
+    <a href="{{ url_for('index') }}" class="logo-text-center">ASALPI</a>
+
+    <button id="hamburger-btn" class="hamburger" aria-label="Abrir menu">
+      ☰
+    </button>
+
+    <nav class="nav-buttons">
+      <a href="{{ url_for('index') }}">INÍCIO</a>
+      <a href="{{ url_for('news') }}">NOTÍCIAS</a>
+      <a href="{{ url_for('index') }}#diretoria">DIRETORIA</a>
+      <a href="{{ url_for('index') }}#orgaos" class="active">ORGÃOS</a>
+
+
+      <!-- Dropdown de Convênios -->
+      <div class="dropdown">
+        <a>CONVÊNIO</a>
+        <div class="dropdown-content">
+          <a href="https://www.unimed.coop.br/site/pt/web/teresina/" target="_blank" rel="noopener">UNIMED</a>
+          <a href="https://www.claro.com.br/" target="_blank" rel="noopener">CLARO</a>
+          <a href="https://www.sescpiaui.com.br/" target="_blank" rel="noopener">SESC</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Sidebar mobile com dropdown -->
+  <aside class="sidebar">
+    <div class="logo">
+      <span>ASALPI</span>
+    </div>
+    <a href="{{ url_for('index') }}">INÍCIO</a>
+    <a href="{{ url_for('index') }}#diretoria">DIRETORIA</a>
+    <a href="{{ url_for('news') }}">NOTÍCIAS</a>
+    <a href="{{ url_for('index') }}#orgaos" class="active">ORGÃOS</a>
+    <a href="https://www.unimed.coop.br/site/pt/web/teresina/" target="_blank" rel="noopener">UNIMED</a>
+    <a href="https://www.claro.com.br/" target="_blank" rel="noopener">CLARO</a>
+    <a href="https://www.sescpiaui.com.br/" target="_blank" rel="noopener">SESC</a>
+  </aside>
+
+  <main>
+    <h1>Galeria de Imagens do nossa colonia de ferias</h1>
+    <p>Ambiente ao lado da praia e área verde para toda a família.</p>
+    <p>R. Parnaíba, 507, Luís Correia - PI, 64220-000 WhatsApp 86 99437-1454</p>
+
+    <div class="galeria">
+      <div class="card"><img src="../static/assets/colonia-feria/colonia1.jpg"
+          alt="Campo verde e entrada principal da colônia da ASALPI"></div>
+      <div class="card"><img src="../static/assets/colonia-feria/colonia2.jpg" alt="Recepção da colônia da ASALPI">
+      </div>
+      <div class="card"><img src="../static/assets/colonia-feria/colonia3.webp" alt="Apartamentos da colônia da ASALPI">
+      </div>
+      <div class="card"><img src="../static/assets/colonia-feria/colonia4.jpg"
+          alt="Área comum arborizada da colônia da ASALPI"></div>
+      <div class="card"><img src="../static/assets/colonia-feria/colonia5.jpg"
+          alt="Espaço de lazer na área comum da colônia da ASALPI"></div>
+      <div class="card"><img src="../static/assets/colonia-feria/colonia6.jpg"
+          alt="Estrutura de torre próxima aos alojamentos da colônia da ASALPI"></div>
+      <div class="card"><img src="../static/assets/colonia-feria/colonia7.jpg"
+          alt="Bloco de alojamentos da colônia da ASALPI"></div>
+      <div class="card"><img src="../static/assets/colonia-feria/colonia8.jpg"
+          alt="Alojamentos da colônia da ASALPI vistos de outro ângulo"></div>
+      <div class="card"><img src="../static/assets/colonia-feria/colonia9.jpg"
+          alt="Entrada lateral da colônia da ASALPI"></div>
+      <div class="card"><img src="../static/assets/colonia-feria/colonia10.jpg"
+          alt="Vista ampla da entrada da colônia da ASALPI"></div>
+      <div class="card"><img src="../static/assets/colonia-feria/colonia12.jpg"
+          alt="Fachada frontal dos alojamentos da colônia da ASALPI"></div>
+      <div class="card"><img src="../static/assets/colonia-feria/colonia13.jpg"
+          alt="Outra vista da fachada frontal dos alojamentos da colônia da ASALPI"></div>
+      <div class="card"><img src="../static/assets/colonia-feria/colonia14.jpg"
+          alt="Alojamentos ao lado do pátio da colônia da ASALPI"></div>
+      <div class="card"><img src="../static/assets/colonia-feria/colonia15.jpg"
+          alt="Outro ângulo dos alojamentos ao lado do pátio da colônia da ASALPI"></div>
+      <div class="card"><img src="../static/assets/colonia-feria/colonia16.jpg"
+          alt="Salão de convivência da colônia da ASALPI"></div>
+      <div class="card"><img src="../static/assets/colonia-feria/colonia17.jpg"
+          alt="Outro ângulo do salão de convivência da colônia da ASALPI"></div>
+
+    </div>
+  </main>
+
+  <!-- Lightbox completo -->
+  <div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+    <div id="lightbox-caption"></div>
+
+    <!-- Setas para navegar -->
+    <a class="prev">&#10094;</a>
+    <a class="next">&#10095;</a>
+  </div>
+
+
+  <!-- Footer -->
+  <footer class="footer-complexo" role="contentinfo">
+    <div class="footer-container">
+      <section class="footer-col" aria-labelledby="sobre-nos-title">
+        <h3 id="sobre-nos-title">SOBRE NÓS</h3>
+        <p>
+          A ASALPI é uma associação sem fins lucrativos que visa promover atividades sociais, culturais e
+          esportivas
+          para seus associados. Nosso objetivo é fortalecer a comunidade através de iniciativas inclusivas e
+          colaborativas.
+        </p>
+      </section>
+
+      <section class="footer-col convenio" aria-labelledby="convenio-title">
+        <h3 id="convenio-title">CONVÊNIO</h3>
+        <ul>
+          <li><a href="https://www.unimed.coop.br/site/pt/web/teresina/">UNIMED</a></li>
+          <li><a href="https://www.claro.com.br/">CLARO</a></li>
+          <li><a href="https://www.sescpiaui.com.br/">SESC</a></li>
+        </ul>
+      </section>
+
+      <section class="footer-col" aria-labelledby="documentos-title">
+        <h3 id="documentos-title">Documentos</h3>
+        <ul>
+          <li><a href="../static/assets/Estatuto Social.pdf" download="Estatuto Social.pdf">ESTATUTO SOCIAL</a></li>
+          <li><a href="../static/assets/REGIMENTO INTERNO.pdf" download="Regimento Interno.pdf">REGIMENTO
+              INTERNO</a></li>
+        </ul>
+      </section>
+
+      <section class="footer-col atendimento" aria-labelledby="atendimento-title">
+        <h3 id="atendimento-title">Atendimento</h3>
+        <p><strong>Assembleia Legislativa do Estado do Piauí - Palácio Petrônio Portela</strong></p>
+        <p><strong>Endereço:</strong><br>
+          Av. Mal. Castelo Branco, 201 - Cabral<br>
+          Teresina/PI - CEP 64001-923</p>
+        <p><strong>Telefone:</strong><br>3133-3022</p>
+        <p><strong>Email:</strong><br>
+          <a href="mailto:ouvidoria@al.pi.leg.br">ouvidoria@al.pi.leg.br</a>
+        </p>
+      </section>
+    </div>
+
+    <div class="footer-social" aria-label="Redes sociais">
+      <a href="https://facebook.com/assalpi" target="_blank" aria-label="Facebook ASSALPI"><i
+          class="fa fa-facebook"></i></a>
+      <a href="https://instagram.com/assalpi" target="_blank" aria-label="Instagram ASSALPI"><i
+          class="fa fa-instagram"></i></a>
+      <a href="mailto:contato@assalpi.com.br" aria-label="Enviar email para ASSALPI"><i class="fa fa-envelope"></i></a>
+    </div>
+  </footer>
+
+  <script src="../static/js/colonia.js"></script>
+</body>
+
+</html>
